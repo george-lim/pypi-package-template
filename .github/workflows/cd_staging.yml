@@ -28,7 +28,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests semantic-version setuptools wheel twine
     - name: Resolve target version
-      run: echo TARGET_VERSION=$(python scripts/resolve_target_version.py) >> $GITHUB_ENV
+      run: echo TARGET_VERSION="$(python scripts/resolve_target_version.py)" >> "$GITHUB_ENV"
     - name: Build package
       run: python setup.py bdist_wheel
     - name: Check package long description
